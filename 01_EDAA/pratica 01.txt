@@ -1,0 +1,131 @@
+#include <stdio.h>
+
+// Função para calcular a média de três notas
+float calcularMedia(float nota1, float nota2, float nota3) {
+    return (nota1 + nota2 + nota3) / 3;
+}
+
+// Função para calcular a idade atual e a idade em 2050
+void calcularIdades(int anoNascimento, int anoAtual) {
+    int idadeAtual = anoAtual - anoNascimento;
+    int idade2050 = 2050 - anoNascimento;
+    printf("Idade atual: %d anos\n", idadeAtual);
+    printf("Idade em 2050: %d anos\n", idade2050);
+}
+
+// Função para converter dólares em reais
+float converterDolaresParaReais(float cotacao, float dolares) {
+    return cotacao * dolares;
+}
+
+// Função para calcular o novo salário com aumento de 25%
+float calcularNovoSalario(float salario) {
+    return salario * 1.25;
+}
+
+// Função para calcular a área de um losango
+float calcularAreaLosango(float diagonalMaior, float diagonalMenor) {
+    return (diagonalMaior * diagonalMenor) / 2;
+}
+
+// Função para converter temperatura de Celsius para Fahrenheit
+float converterCelsiusParaFahrenheit(float celsius) {
+    return (celsius * 1.8) + 32;
+}
+
+// Função para calcular a quantidade de salários mínimos
+float calcularQuantidadeSalariosMinimos(float salarioMinimo, float salario) {
+    return salario / salarioMinimo;
+}
+
+// Função para calcular o novo peso após engordar ou emagrecer
+float calcularNovoPeso(float peso, float percentual) {
+    return (percentual > 0) ? (peso * (1 + percentual/100)) : (peso * (1 - (-percentual)/100));
+}
+
+// Função para calcular a hipotenusa de um triângulo
+float calcularHipotenusa(float cateto1, float cateto2) {
+    return sqrt(cateto1 * cateto1 + cateto2 * cateto2);
+}
+
+// Função para calcular o comprimento, área e volume de uma esfera
+void calcularEsfera(float raio) {
+    const float PI = 3.14159265359;
+    float comprimento = 2 * PI * raio;
+    float area = PI * raio * raio;
+    float volume = (3.0 / 4.0) * PI * raio * raio * raio;
+
+    printf("Comprimento da esfera: %.2f\n", comprimento);
+    printf("Área da esfera: %.2f\n", area);
+    printf("Volume da esfera: %.2f\n", volume);
+}
+
+int main() {
+    float nota1, nota2, nota3;
+    int anoNascimento, anoAtual;
+    float cotacaoDolar, valorDolar;
+    float salario;
+    float diagonalMaior, diagonalMenor;
+    float temperaturaCelsius;
+    float salarioMinimo;
+    float peso, percentual;
+    float cateto1, cateto2;
+    float raio;
+
+    // 1) Receba três notas e calcule a média
+    printf("Digite as três notas: ");
+    scanf("%f %f %f", &nota1, &nota2, &nota3);
+    float media = calcularMedia(nota1, nota2, nota3);
+    printf("Média: %.2f\n", media);
+
+    // 2) Receba o ano de nascimento e calcule a idade
+    printf("Digite o ano de nascimento e o ano atual: ");
+    scanf("%d %d", &anoNascimento, &anoAtual);
+    calcularIdades(anoNascimento, anoAtual);
+
+    // 3) Receba a cotação do dólar e um valor em dólares
+    printf("Digite a cotação do dólar e o valor em dólares: ");
+    scanf("%f %f", &cotacaoDolar, &valorDolar);
+    float valorEmReais = converterDolaresParaReais(cotacaoDolar, valorDolar);
+    printf("Valor em reais: %.2f\n", valorEmReais);
+
+    // 4) Receba o salário e calcule o novo salário com aumento de 25%
+    printf("Digite o salário: ");
+    scanf("%f", &salario);
+    float novoSalario = calcularNovoSalario(salario);
+    printf("Novo salário: %.2f\n", novoSalario);
+
+    // 5) Receba as diagonais de um losango e calcule a área
+    printf("Digite as diagonais maior e menor do losango: ");
+    scanf("%f %f", &diagonalMaior, &diagonalMenor);
+    float areaLosango = calcularAreaLosango(diagonalMaior, diagonalMenor);
+    printf("Área do losango: %.2f\n", areaLosango);
+
+    // 6) Receba uma temperatura em Celsius e converta para Fahrenheit
+    printf("Digite a temperatura em Celsius: ");
+    scanf("%f", &temperaturaCelsius);
+    float temperaturaFahrenheit = converterCelsiusParaFahrenheit(temperaturaCelsius);
+    printf("Temperatura em Fahrenheit: %.2f\n", temperaturaFahrenheit);
+
+    // 7) Receba o valor do salário mínimo e o salário de um funcionário
+    printf("Digite o valor do salário mínimo e o salário do funcionário: ");
+    scanf("%f %f", &salarioMinimo, &salario);
+    float quantidadeSalariosMinimos = calcularQuantidadeSalariosMinimos(salarioMinimo, salario);
+    printf("Quantidade de salários mínimos: %.2f\n", quantidadeSalariosMinimos);
+
+    // 8) Receba o peso de uma pessoa e calcule o novo peso após engordar ou emagrecer
+    printf("Digite o peso da pessoa: ");
+    scanf("%f", &peso);
+    printf("Digite o percentual de mudança no peso (+ para engordar, - para emagrecer): ");
+    scanf("%f", &percentual);
+    float novoPeso = calcularNovoPeso(peso, percentual);
+    printf("Novo peso: %.2f\n", novoPeso);
+
+    // 9) Receba os catetos de um triângulo e calcule a hipotenusa
+    printf("Digite os valores dos catetos do triângulo: ");
+    scanf("%f %f", &cateto1, &cateto2);
+    float hipotenusa = calcularHipotenusa(cateto1, cateto2);
+    printf("Hipotenusa: %.2f\n", hipotenusa);
+
+    // 10) Receba o raio de uma esfera e calcule comprimento, área e volume
+    printf("Digite
